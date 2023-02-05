@@ -38,6 +38,7 @@ jobs:
             ./cx version
             ./ScaResolver --version
             popd
+            ../ScaResolver offline -r .cxsca-results.json -s . --scan-containers --log-level debug
             ../cx \
             scan create \
             -s . \
@@ -49,7 +50,6 @@ jobs:
             --base-auth-uri $CX_BASE_AUTH_URI \
             --tenant $CX_TENANT \
             --apikey $CX_API_KEY \
-            --sca-resolver ../ScaResolver \
             --sast-incremental \
             --report-format json,summaryHTML
       - run:
