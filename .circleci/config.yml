@@ -51,7 +51,8 @@ jobs:
             --apikey $CX_API_KEY \
             --sca-resolver ../ScaResolver \
             --sast-incremental \
-            --report-format json,summaryHTML
+            --report-format json,summaryHTML \
+            --sca-resolver-params "--scan-containers"
       - run:
           name: Post Stats to GitHub PR
           command: |         
